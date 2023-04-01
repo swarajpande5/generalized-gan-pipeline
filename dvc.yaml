@@ -23,3 +23,14 @@ stages:
     metrics:
     - metrics/train_metric.json:
         cache: false
+  eval:
+    cmd: python3 code/eval.py
+    deps:
+    - data/processed_test_data.npy
+    - saved_model/discriminator.json
+    - saved_model/discriminator_weights.hdf5
+    - saved_model/generator.json
+    - saved_model/generator_weights.hdf5
+    metrics:
+    - metrics/eval.json:
+        cache: false

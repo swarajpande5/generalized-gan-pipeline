@@ -51,3 +51,25 @@ stages:
     - path: saved_model/generator_weights.hdf5
       md5: dedb2490907b30fde3ac7739b4a91a07
       size: 3457944
+  eval:
+    cmd: python3 code/eval.py
+    deps:
+    - path: data/processed_test_data.npy
+      md5: 5833ab88d8f240bdae87c5ce0170dcdf
+      size: 128
+    - path: saved_model/discriminator.json
+      md5: 480fb9bdf5ea08b19e4cb405308fabc7
+      size: 6554
+    - path: saved_model/discriminator_weights.hdf5
+      md5: 66ba99c48c49b0651a516278975fa5c5
+      size: 506048
+    - path: saved_model/generator.json
+      md5: e68f9b16777b83026d012f10f9e5981b
+      size: 6485
+    - path: saved_model/generator_weights.hdf5
+      md5: dedb2490907b30fde3ac7739b4a91a07
+      size: 3457944
+    outs:
+    - path: metrics/eval.json
+      md5: 99914b932bd37a50b983c5e7c90ae93b
+      size: 2

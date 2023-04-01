@@ -1,0 +1,25 @@
+stages:
+  featurization:
+    cmd: python3 code/featurization.py
+    deps:
+    - code/featurization.py
+    - data/test_data.csv
+    - data/train_data.csv
+    outs:
+    - data/norm_params.json
+    - data/processed_test_data.npy
+    - data/processed_train_data.npy
+  training:
+    cmd: python3 code/train_model.py --force
+    deps:
+    - code/train_model.py
+    - data/processed_train_data.npy
+    outs:
+    - images/
+    - saved_model/discriminator.json
+    - saved_model/discriminator_weights.hdf5
+    - saved_model/generator.json
+    - saved_model/generator_weights.hdf5
+    metrics:
+    - metrics/train_metric.json:
+        cache: false

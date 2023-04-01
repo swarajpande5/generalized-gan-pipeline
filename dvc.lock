@@ -1,0 +1,53 @@
+schema: '2.0'
+stages:
+  featurization:
+    cmd: python3 code/featurization.py
+    deps:
+    - path: code/featurization.py
+      md5: c254348d3ffc48ee96ec583ea85000bf
+      size: 335
+    - path: data/test_data.csv
+      md5: c807df8d6d804ab2647fc15c3d40f543
+      size: 18289443
+    - path: data/train_data.csv
+      md5: 5b49cf1b57fb9d6102b559d59d99df7c
+      size: 109575994
+    outs:
+    - path: data/norm_params.json
+      md5: 99914b932bd37a50b983c5e7c90ae93b
+      size: 2
+    - path: data/processed_test_data.npy
+      md5: 5833ab88d8f240bdae87c5ce0170dcdf
+      size: 128
+    - path: data/processed_train_data.npy
+      md5: 5833ab88d8f240bdae87c5ce0170dcdf
+      size: 128
+  training:
+    cmd: python3 code/train_model.py --force
+    deps:
+    - path: code/train_model.py
+      md5: 3e4e7dfdbae74a3d7a10f1e230f52c9f
+      size: 525
+    - path: data/processed_train_data.npy
+      md5: 5833ab88d8f240bdae87c5ce0170dcdf
+      size: 128
+    outs:
+    - path: images/
+      md5: b680d9d1068a4918e923c7d122e73808.dir
+      size: 2149645
+      nfiles: 10
+    - path: metrics/train_metric.json
+      md5: 60aacc4f7f687d2d968848e14f949464
+      size: 36
+    - path: saved_model/discriminator.json
+      md5: 480fb9bdf5ea08b19e4cb405308fabc7
+      size: 6554
+    - path: saved_model/discriminator_weights.hdf5
+      md5: 66ba99c48c49b0651a516278975fa5c5
+      size: 506048
+    - path: saved_model/generator.json
+      md5: e68f9b16777b83026d012f10f9e5981b
+      size: 6485
+    - path: saved_model/generator_weights.hdf5
+      md5: dedb2490907b30fde3ac7739b4a91a07
+      size: 3457944

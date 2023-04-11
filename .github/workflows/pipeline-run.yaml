@@ -1,4 +1,4 @@
-name: generalized-gan-pipeline
+name: Build-Pipeline
 on: [push]
 jobs:
   build:

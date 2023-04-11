@@ -1,4 +1,4 @@
-name: Build-Pipeline
+name: Pipeline-Run
 on: [push]
 jobs:
   build:

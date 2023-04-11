@@ -1,4 +1,7 @@
 ## Generalized GAN Pipeline
+[![Pipeline-Run](https://github.com/swarajpande4/generalized-gan-pipeline/workflows/Pipeline-Run/badge.svg)](https://github.com/swarajpande4/generalized-gan-pipeline/actions?query=workflow%3APipeline-Run) 
+[![Publish-Image](https://github.com/swarajpande4/generalized-gan-pipeline/workflows/Publish-Image/badge.svg)](https://github.com/swarajpande4/generalized-gan-pipeline/actions?query=workflow%3APublish-Image) 
+[![Release](https://img.shields.io/github/v/release/swarajpande4/generalized-gan-pipeline)]() \
 An ML / MLOps project implementing a streamlined system design for a train-test-deploy pipeline for various types of GANs (Generative Adversarial Networks). This project uses DVC for internal pipelining and GitHub Actions to enable CI/CD for the trained and tested models.
 
 DAGsHub Link (for experimentation and pipelining): [Click Here!](https://dagshub.com/swarajpande4/generalized-gan-pipeline)

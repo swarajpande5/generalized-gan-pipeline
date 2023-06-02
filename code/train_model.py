@@ -13,7 +13,7 @@ def train_model():
     
     start_time = time.time()
     acgan = ACGAN() 
-    acgan.train(epochs=125, batch_size=32, sample_interval=25)
+    acgan.train(epochs=100, batch_size=32, sample_interval=25)
     end_time = time.time()
     
     with open('./metrics/train_metric.json', 'w') as f:

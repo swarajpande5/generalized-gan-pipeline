@@ -13,7 +13,7 @@ DAGsHub Link (for experimentation and pipelining): [Click Here!](https://dagshub
 
 2.  Clone the repository. 
     ```
-    git clone https://github.com/swarajpande4/generalized-gan-pipeline.git
+    git clone https://github.com/swarajpande5/generalized-gan-pipeline.git
     
     cd generalized-gan-pipeline/
     ```
